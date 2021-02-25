@@ -1,8 +1,8 @@
 pipeline {
     agent {
-        docker { image 'node:14-alpine' }
+        docker { image 'mcr.microsoft.com/dotnet/sdk:5.0' }
     }
-    
+
     environment {
         DOTNET_CLI_HOME = '/tmp'
     }
@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                dotnet build
+                sh "dotnet build"
             }
         }
         stage('Test') {
