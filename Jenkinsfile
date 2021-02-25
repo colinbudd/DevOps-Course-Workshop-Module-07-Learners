@@ -1,5 +1,8 @@
 pipeline {
-    agent none
+    agent {
+        docker { image 'node:14-alpine' }
+    }
+    
     environment {
         DOTNET_CLI_HOME = '/tmp'
     }
