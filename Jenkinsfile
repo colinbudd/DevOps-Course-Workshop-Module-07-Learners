@@ -1,5 +1,8 @@
 pipeline {
-    agent any
+    agent none
+    environment {
+        DOTNET_CLI_HOME = '/tmp'
+    }
 
     stages {
         stage('Build') {
